@@ -1,7 +1,13 @@
 {
   "name": "brocode/module-image-optimizer-avif",
   "version": "0.0.1",
-  "description": "N/A",
+  "license": ["MIT"],
+  "authors": [
+    {
+      "name": "Benjamin Rosenberger",
+      "email": "bensch.rosenberger@gmail.com"
+    }
+  ],
   "type": "magento2-module",
   "require": {
     "php": ">=8.1",
@@ -16,5 +22,11 @@
     "psr-4": {
       "BroCode\\ImageAvifOptimizer\\": ""
     }
-  }
+  },
+  "funding": [
+    {
+      "type": "By me a coffee",
+      "url": "https://www.buymeacoffee.com/brosenberger"
+    }
+  ]
 }
