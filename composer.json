@@ -23,6 +23,9 @@
       "BroCode\\ImageAvifOptimizer\\": ""
     }
   },
+  "suggest": {
+    "brocode/module-image-optimizer-webp": "Adds the possibility to convert images to WEBP format"
+  },
   "funding": [
     {
       "type": "By me a coffee",
