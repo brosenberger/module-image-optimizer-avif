@@ -7,6 +7,9 @@
             <argument name="imageConverter" xsi:type="array">
                 <item name="avif" xsi:type="object">BroCode\ImageAvifOptimizer\Model\Converter\AvifImageConverter</item>
             </argument>
+            <argument name="imageValidator" xsi:type="array">
+                <item name="avif" xsi:type="object">BroCode\ImageAvifOptimizer\Model\Converter\AvifImageConverter</item>
+            </argument>
         </arguments>
     </type>
 </config>
