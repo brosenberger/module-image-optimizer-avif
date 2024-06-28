@@ -6,7 +6,7 @@
   "require": {
     "php": ">=8.1",
     "magento/framework": "*",
-    "bro-code/module-image-optimizer": "*",
+    "brocode/module-image-optimizer": "*",
     "ext-gd": "*"
   },
   "autoload": {
