@@ -1,6 +1,6 @@
 {
   "name": "brocode/module-image-optimizer-avif",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "license": ["MIT"],
   "authors": [
     {
@@ -12,7 +12,7 @@
   "require": {
     "php": ">=8.1",
     "magento/framework": "*",
-    "brocode/module-image-optimizer": "*",
+    "brocode/module-image-optimizer": "^1.0",
     "ext-gd": "*"
   },
   "autoload": {
