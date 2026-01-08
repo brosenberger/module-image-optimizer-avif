@@ -47,15 +47,16 @@ class AvifImageConverter extends AbstractImageConverter
         try {
             $image = imagecreatefromstring($imageData);
             imagepalettetotruecolor($image);
+
+            $converted = imageavif($image, $newFile, $this->getImageQuality());
+            if (!$converted) {
+                $this->logger->info('BroCode - ImageOptimizer: Could not convert image to avif: ' . $imagePath);
+            }
         } catch (\Exception $ex) {
             $this->logger->info('BroCode - ImageOptimizer: Could not transform/load image ' . $imagePath . ': ' . $ex->getMessage());
             return false;
         }
 
-        $converted = imageavif($image, $newFile, $this->getImageQuality());
-        if (!$converted) {
-            $this->logger->info('BroCode - ImageOptimizer: Could not convert image to avif: ' . $imagePath);
-        }
         return $converted;
     }
 
