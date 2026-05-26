@@ -22,12 +22,30 @@ Add following snippet to the .htaccess file, which serves public images that are
 
 ```
  ############################################
- ## if client accepts webp, rewrite image urls to use webp version
+ ## if client accepts avif, rewrite image urls to use avif version
 AddType image/avif .avif
 RewriteCond %{HTTP_ACCEPT} image/avif
 RewriteCond %{REQUEST_FILENAME} (.*)\.(png|gif|jpe?g)$
 RewriteCond %{REQUEST_FILENAME}\.avif -f
 RewriteRule ^ %{REQUEST_FILENAME}\.avif [L,T=image/avif]
+```
+
+### Nginx Configuration
+
+Merge into the project nginx vhost (`nginx.conf.sample`). Place the `map` in `http {}`; add the `location` before Magento's generic static `location` under `/media/`.
+
+```
+# In http { } (once per nginx instance or included vhost file)
+map $http_accept $avif_suffix {
+    default "";
+    "~*avif" ".avif";
+}
+
+# In server { }
+location ~* ^/media/.+\.(png|gif|jpe?g)$ {
+    add_header Vary Accept;
+    try_files $uri$avif_suffix $uri $uri/ /get.php$is_args$args;
+}
 ```
 
 ## Further Information
